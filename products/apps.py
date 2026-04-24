@@ -1,10 +1,5 @@
-from django.contrib import admin
-from .models import Product, Division, Zone, Area, Route, Outlet
+from django.apps import AppConfig
 
-# সব মডেল অ্যাডমিন প্যানেলে রেজিস্টার করা হচ্ছে
-admin.site.register(Product)
-admin.site.register(Division)
-admin.site.register(Zone)
-admin.site.register(Area)
-admin.site.register(Route)
-admin.site.register(Outlet)
+class ProductsConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'products'
