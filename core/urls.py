@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from products import views
 
 urlpatterns = [
@@ -12,4 +12,7 @@ urlpatterns = [
     path('area-content/', views.area_content, name='area_content'),
     path('route-content/', views.route_content, name='route_content'),
     path('outlet-content/', views.outlet_content, name='outlet_content'),
+    path('locations/', include('locations.urls')),
+
+    
 ]

@@ -1,9 +1,4 @@
 from django.contrib import admin
-from .models import Product, Division, Zone, Area, Route, Outlet
+from .models import Product
 
 admin.site.register(Product)
-admin.site.register(Division)
-admin.site.register(Zone)
-admin.site.register(Area)
-admin.site.register(Route)
-admin.site.register(Outlet)

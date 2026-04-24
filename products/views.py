@@ -1,8 +1,13 @@
 import pandas as pd
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Product, Division, Zone, Area, Route, Outlet
 from django.contrib.auth.models import User
+
+# ১. Product মডেলটি এই অ্যাপেই আছে, তাই এটি ডট (.) দিয়ে থাকবে
+from .models import Product 
+
+# ২. Division, Zone ইত্যাদি এখন 'locations' অ্যাপে, তাই সরাসরি অ্যাপের নাম দিয়ে আনতে হবে
+from locations.models import Division, Zone, Area, Route, Outlet
 
 def product_dashboard(request):
     if request.method == 'POST' and request.FILES.get('excel_file'):
@@ -23,6 +28,7 @@ def product_dashboard(request):
     products = Product.objects.all().order_by('-created_at')
     return render(request, 'base.html', {'products': products})
 
+# নিচের ফাংশনগুলো আগের মতোই থাকবে, শুধু ইমপোর্ট ঠিক থাকলে এগুলো কাজ করবে
 def product_content(request):
     products = Product.objects.all().order_by('-created_at')
     return render(request, 'product_table.html', {'products': products})
