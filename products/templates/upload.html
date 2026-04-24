@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Excel File Upload</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="excel_file" accept=".xlsx, .xls" required>
+        <button type="submit">Upload Now</button>
+    </form>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: green;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <br>
+    <a href="/admin">Go to Admin Panel to see data</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<div class="card shadow-sm border-0 p-4">
+    <h4 class="mb-3 text-primary">🗺️ Area List</h4>
+    <table class="table table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Area Name</th>
+                <th>Under Zone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in areas %}
+            <tr>
+                <td><strong>{{ a.name }}</strong></td>
+                <td>{{ a.zone.name }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="2" class="text-center">কোন এরিয়া পাওয়া যায়নি।</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
